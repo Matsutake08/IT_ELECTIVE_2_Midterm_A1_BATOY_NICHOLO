@@ -6,4 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Content Include="..\..\..\..\..\Downloads\Opera Snapshot_2026-07-18_045724_www.canva.com.png" Link="wwwroot\images\Opera Snapshot_2026-07-18_045724_www.canva.com.png" />
+    </ItemGroup>
+
 </Project>
