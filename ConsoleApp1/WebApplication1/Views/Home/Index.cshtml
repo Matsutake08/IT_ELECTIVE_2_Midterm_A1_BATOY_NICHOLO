@@ -1,8 +1,183 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Portfolio - Nicholo John L. Batoy";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section id="home" class="py-5 my-5 d-flex align-items-center min-vh-75">
+    <div class="row align-items-center flex-column-reverse flex-md-row">
+        <div class="col-md-7 text-center text-md-start">
+            <h1 class="display-3 fw-bold text-dark">Nicholo John L. Batoy</h1>
+            <h3 class="text-secondary mb-3">IT Professional</h3>
+            <p class="lead text-muted mb-4">
+                Hi, I'm Nicholo John L. Batoy, a BSIT student at Lyceum of Alabang with a passion for technology and continuous learning. As an aspiring IT professional, I love sharpening my strategic thinking through developing applications, exploring software systems, and building responsive web solutions.
+            </p>
+            <div class="d-grid d-sm-flex gap-3 justify-content-center justify-content-md-start">
+                <a href="#projects" class="btn btn-primary btn-sm px-4 py-2">View Projects</a>
+                <a href="#contact" class="btn btn-outline-secondary btn-sm px-4 py-2">Contact Me</a>
+            </div>
+        </div>
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img src="~/images/my-photo.png" class="img-fluid rounded-circle shadow-lg border border-4 border-light" alt="Nicholo's Photo" style="max-width: 280px; aspect-ratio: 1/1; object-fit: cover;" />
+        </div>
+    </div>
+</section>
+
+<hr class="my-5" />
+
+<section id="about" class="py-5 text-center">
+    <h2 class="display-6 fw-bold text-dark mb-4">About Me</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-10 text-muted about-text">
+            <p class="mb-4">
+                Hello! My name is Nicholo John L. Batoy, and I am currently a student at Lyceum of Alabang. I am pursuing a Bachelor of Science in Information Technology (BSIT), a choice driven by my fascination with technology and how it shapes our daily lives. Throughout my educational journey, I have been dedicated to building a solid foundation in tech concepts, and this course is providing me with the practical skills and knowledge needed to thrive in the digital age.
+            </p>
+            <p>
+                Looking ahead, my ultimate career goal is to become a highly skilled IT professional, capable of tackling complex technological challenges. I am naturally curious, and one of my biggest interests is simply learning new things—whether that means picking up a new programming language or exploring how different systems work. Ultimately, my future plan is to secure a great job in the tech industry where I can grow professionally, while also making sure I take the time to truly enjoy life.
+            </p>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5" />
+
+<section id="skills" class="py-5">
+    <h2 class="display-6 fw-bold text-center text-dark mb-5">Skills</h2>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 bg-white p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-dark mb-3">Programming Languages</h5>
+                    <ul class="list-unstyled text-muted lh-lg">
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 bg-white p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-dark mb-3">Web Technologies</h5>
+                    <ul class="list-unstyled text-muted lh-lg">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Bootstrap</li>
+                        <li>ASP.NET Core MVC</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 bg-white p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-dark mb-3">Databases</h5>
+                    <ul class="list-unstyled text-muted lh-lg">
+                        <li>Microsoft Access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 bg-white p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-dark mb-3">Development Tools</h5>
+                    <ul class="list-unstyled text-muted lh-lg">
+                        <li>Visual Studio</li>
+                        <li>PyCharm</li>
+                        <li>NetBeans</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5" />
+
+<section id="projects" class="py-5">
+    <h2 class="display-6 fw-bold text-center text-dark mb-5">Projects</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-light">
+                <div class="p-4 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="img-fluid" alt="GitHub Logo" style="width: 80%; max-width: 220px; aspect-ratio: 1/1; object-fit: contain;" />
+                </div>
+                <div class="card-body d-flex flex-column pt-0">
+                    <h6 class="fw-bold text-dark mb-1">BSIT31E1_PRELIM_A1_BatoyNicholo</h6>
+                    <p class="text-muted small mb-2">My initial repository tracking system designed to establish structural development patterns.</p>
+                    <p class="small mb-3"><strong>Technologies:</strong> C#</p>
+                    <a href="https://github.com/Matsutake08/BSIT31E1_PRELIM_A1_BatoyNicholo.git" target="_blank" class="btn btn-primary btn-sm align-self-start px-3">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-light">
+                <div class="p-4 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="img-fluid" alt="GitHub Logo" style="width: 80%; max-width: 220px; aspect-ratio: 1/1; object-fit: contain;" />
+                </div>
+                <div class="card-body d-flex flex-column pt-0">
+                    <h6 class="fw-bold text-dark mb-1">BSIT31E1_PRELIM_A2_BatoyNicholo</h6>
+                    <p class="text-muted small mb-2">An iterative project application expanding on foundational coding mechanisms.</p>
+                    <p class="small mb-3"><strong>Technologies:</strong> C#</p>
+                    <a href="https://github.com/Matsutake08/BSIT31E1_PRELIM_A2_BatoyNicholo.git" target="_blank" class="btn btn-primary btn-sm align-self-start px-3">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-light">
+                <div class="p-4 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="img-fluid" alt="GitHub Logo" style="width: 80%; max-width: 220px; aspect-ratio: 1/1; object-fit: contain;" />
+                </div>
+                <div class="card-body d-flex flex-column pt-0">
+                    <h6 class="fw-bold text-dark mb-1">BSIT31E1_PRELIM_A3_NicholoBatoy</h6>
+                    <p class="text-muted small mb-2">A structured code solution emphasizing edge-case troubleshooting parameters.</p>
+                    <p class="small mb-3"><strong>Technologies:</strong> C#</p>
+                    <a href="https://github.com/Matsutake08/BSIT31E1_PRELIM_A3_NicholoBatoy.git" target="_blank" class="btn btn-primary btn-sm align-self-start px-3">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5" />
+
+<section id="contact" class="py-5 mb-5">
+    <h2 class="display-6 fw-bold text-center text-dark mb-5">Contact</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-bordered bg-white mb-4 align-middle">
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold bg-light" style="width: 30%;">Email:</td>
+                            <td class="text-muted">nicholox08@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">Mobile:</td>
+                            <td class="text-muted">09XX-XXX-XXXX</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">GitHub:</td>
+                            <td><a href="https://github.com/Matsutake08" target="_blank" class="text-decoration-none text-primary">github.com/Matsutake08</a></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">LinkedIn:</td>
+                            <td class="text-muted">linkedin.com</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">Facebook:</td>
+                            <td><a href="https://www.facebook.com/nicholo.john.8" target="_blank" class="text-decoration-none text-primary">facebook.com/nicholo.john.8</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success px-4 py-2 shadow-sm"><i class="bi bi-download me-2"></i>Download Resume</button>
+            </div>
+        </div>
+    </div>
+</section>
