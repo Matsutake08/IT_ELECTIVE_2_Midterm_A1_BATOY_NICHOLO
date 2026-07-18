@@ -3,20 +3,44 @@
 }
 
 <style>
-    /* This makes it act like separate pages by hiding sections */
-    .page-section { display: none; }
-    #home { display: block; } /* Home shows first */
-    
-    /* Styling to match your screenshot */
-    .profile-img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-    .skill-card { border: 1px solid #eaeaea; padding: 1.5rem; border-radius: 8px; height: 100%; }
-    .project-card { border: 1px solid #eaeaea; padding: 2rem; border-radius: 8px; text-align: center; }
-    .contact-table td { padding: 12px; border-bottom: 1px solid #eaeaea; }
+    .page-section {
+        display: none;
+    }
+
+    #home {
+        display: block;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .skill-card {
+        border: 1px solid #eaeaea;
+        padding: 1.5rem;
+        border-radius: 8px;
+        height: 100%;
+    }
+
+    .project-card {
+        border: 1px solid #eaeaea;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .contact-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eaeaea;
+    }
 </style>
 
 <div class="container py-5">
 
-    <!-- HOME SECTION -->
     <section id="home" class="page-section">
         <div class="row align-items-center" style="min-height: 80vh;">
             <div class="col-md-7">
@@ -29,13 +53,11 @@
                 <a href="#contact" class="btn btn-outline-secondary px-4 nav-trigger">Contact Me</a>
             </div>
             <div class="col-md-5 text-center">
-                <!-- Make sure your image is named my-photo.jpg or change the name below -->
                 <img src="~/images/my-photo.png" alt="Profile" class="profile-img">
             </div>
         </div>
     </section>
 
-    <!-- ABOUT ME SECTION -->
     <section id="about" class="page-section">
         <h2 class="text-center fw-bold mb-5">About Me</h2>
         <div class="row justify-content-center">
@@ -46,7 +68,6 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
     <section id="skills" class="page-section">
         <h2 class="text-center fw-bold mb-5">Skills</h2>
         <div class="row g-4">
@@ -86,7 +107,6 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
     <section id="projects" class="page-section">
         <h2 class="text-center fw-bold mb-5">Projects</h2>
         <div class="row g-4">
@@ -120,7 +140,6 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="page-section">
         <h2 class="text-center fw-bold mb-5">Contact</h2>
         <div class="row justify-content-center">
@@ -135,7 +154,9 @@
                     </tbody>
                 </table>
                 <div class="text-center mt-4">
-                    <button class="btn btn-success px-4"><i class="bi bi-download me-2"></i> Download Resume</button>
+                    <a href="@Url.Content("~/files/Resume.pdf")" class="btn btn-success px-4" download>
+                        <i class="bi bi-download me-2"></i> Download Resume
+                    </a>
                 </div>
                 <div class="text-center mt-5 text-muted small">
                     <p>© 2026 - IT ELECTIVE 2 Portfolio Assignment</p>
