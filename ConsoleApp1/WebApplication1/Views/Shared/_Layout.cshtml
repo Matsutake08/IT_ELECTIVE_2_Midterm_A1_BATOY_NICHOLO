@@ -137,7 +137,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- This script handles the "separate page" switching without needing new files -->
     <script>
             document.querySelectorAll('.nav-link, .nav-trigger').forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -145,16 +144,14 @@
                     if (targetId && targetId.startsWith('#')) {
                         e.preventDefault();
 
-                        // Hide all sections
                         document.querySelectorAll('.page-section').forEach(sec => {
                             sec.style.display = 'none';
                         });
 
-                        // Show clicked section
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
                             targetElement.style.display = 'block';
-                            window.scrollTo(0, 0); // Scroll to top of the new "page"
+                            window.scrollTo(0, 0);
                         }
                     }
                 });
