@@ -1,22 +1,146 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Portfolio";
 }
 
-<section class="py-5 my-5 d-flex align-items-center min-vh-75">
-    <div class="row align-items-center flex-column-reverse flex-md-row">
-        <div class="col-md-7 text-center text-md-start">
-            <h1 class="display-3 fw-bold text-dark">Nicholo John L. Batoy</h1>
-            <h3 class="text-secondary mb-3">BSIT Undergrad</h3>
-            <p class="lead text-muted mb-4">
-                Hi, I'm Nicholo John L. Batoy, a BSIT student at Lyceum of Alabang with a passion for technology and continuous learning. As an aspiring IT professional, I love sharpening my strategic thinking through developing applications, exploring software systems, and building responsive web solutions.
-            </p>
-            <div class="d-grid d-sm-flex gap-3 justify-content-center justify-content-md-start">
-                <a asp-controller="Home" asp-action="Projects" class="btn btn-primary btn-sm px-4 py-2">View Projects</a>
-                <a asp-controller="Home" asp-action="Contact" class="btn btn-outline-secondary btn-sm px-4 py-2">Contact Me</a>
+<style>
+    /* This makes it act like separate pages by hiding sections */
+    .page-section { display: none; }
+    #home { display: block; } /* Home shows first */
+    
+    /* Styling to match your screenshot */
+    .profile-img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .skill-card { border: 1px solid #eaeaea; padding: 1.5rem; border-radius: 8px; height: 100%; }
+    .project-card { border: 1px solid #eaeaea; padding: 2rem; border-radius: 8px; text-align: center; }
+    .contact-table td { padding: 12px; border-bottom: 1px solid #eaeaea; }
+</style>
+
+<div class="container py-5">
+
+    <!-- HOME SECTION -->
+    <section id="home" class="page-section">
+        <div class="row align-items-center" style="min-height: 80vh;">
+            <div class="col-md-7">
+                <h1 class="fw-bold display-4">Nicholo John L. Batoy</h1>
+                <h4 class="text-secondary mb-4">BSIT Undergrad</h4>
+                <p class="text-muted mb-4" style="line-height: 1.8;">
+                    Hi, I'm Nicholo John L. Batoy, a BSIT student at Lyceum of Alabang with a passion for technology and continuous learning. As an aspiring IT professional, I love sharpening my strategic thinking through developing applications, exploring software systems, and building responsive web solutions.
+                </p>
+                <a href="#projects" class="btn btn-primary px-4 me-2 nav-trigger">View Projects</a>
+                <a href="#contact" class="btn btn-outline-secondary px-4 nav-trigger">Contact Me</a>
+            </div>
+            <div class="col-md-5 text-center">
+                <!-- Make sure your image is named my-photo.jpg or change the name below -->
+                <img src="~/images/my-photo.png" alt="Profile" class="profile-img">
             </div>
         </div>
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-            <img src="~/images/my-photo.png" class="img-fluid rounded-circle shadow-lg border border-4 border-light" alt="Nicholo's Photo" style="max-width: 280px; aspect-ratio: 1/1; object-fit: cover;" />
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="page-section">
+        <h2 class="text-center fw-bold mb-5">About Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-muted" style="line-height: 1.8;">
+                <p>Hello! My name is Nicholo John L. Batoy, and I am currently a student at Lyceum of Alabang. I am pursuing a Bachelor of Science in Information Technology (BSIT), a choice driven by my fascination with technology and how it shapes our daily lives. Throughout my educational journey, I have been dedicated to building a solid foundation in tech concepts, and this course is providing me with the practical skills and knowledge needed to thrive in the digital age.</p>
+                <p>Looking ahead, my ultimate career goal is to become a highly skilled IT professional, capable of tackling complex technological challenges. I am naturally curious, and one of my biggest interests is simply learning new things—whether that means picking up a new programming language or exploring how different systems work. Ultimately, my future plan is to secure a great job in the tech industry where I can grow professionally, while also making sure I take the time to truly enjoy life.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="page-section">
+        <h2 class="text-center fw-bold mb-5">Skills</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="skill-card">
+                    <h6 class="fw-bold mb-3">Programming<br>Languages</h6>
+                    <p class="text-muted small mb-1">C#</p>
+                    <p class="text-muted small mb-1">Java</p>
+                    <p class="text-muted small mb-1">Python</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skill-card">
+                    <h6 class="fw-bold mb-3">Web<br>Technologies</h6>
+                    <p class="text-muted small mb-1">HTML</p>
+                    <p class="text-muted small mb-1">CSS</p>
+                    <p class="text-muted small mb-1">Bootstrap</p>
+                    <p class="text-muted small mb-1">ASP.NET Core MVC</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skill-card">
+                    <h6 class="fw-bold mb-3">Databases<br>&nbsp;</h6>
+                    <p class="text-muted small mb-1">Microsoft Access</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="skill-card">
+                    <h6 class="fw-bold mb-3">Development<br>Tools</h6>
+                    <p class="text-muted small mb-1">Visual Studio</p>
+                    <p class="text-muted small mb-1">PyCharm</p>
+                    <p class="text-muted small mb-1">NetBeans</p>
+                    <p class="text-muted small mb-1">Git</p>
+                    <p class="text-muted small mb-1">GitHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="page-section">
+        <h2 class="text-center fw-bold mb-5">Projects</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="project-card">
+                    <i class="bi bi-github" style="font-size: 6rem;"></i>
+                    <h6 class="fw-bold mt-3" style="font-size: 0.9rem;">BSIT31E1 PRELIM A1_BatoyNicholo</h6>
+                    <p class="text-muted small">My initial inventory tracking system designed to establish structural development patterns.</p>
+                    <p class="small fw-bold mb-2">Technologies: C#</p>
+                    <button class="btn btn-primary btn-sm px-4">View Details</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card">
+                    <i class="bi bi-github" style="font-size: 6rem;"></i>
+                    <h6 class="fw-bold mt-3" style="font-size: 0.9rem;">BSIT31E1 PRELIM A2_BatoyNicholo</h6>
+                    <p class="text-muted small">An iterative project application expanding on foundational coding mechanisms.</p>
+                    <p class="small fw-bold mb-2">Technologies: C#</p>
+                    <button class="btn btn-primary btn-sm px-4">View Details</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card">
+                    <i class="bi bi-github" style="font-size: 6rem;"></i>
+                    <h6 class="fw-bold mt-3" style="font-size: 0.9rem;">BSIT31E1 PRELIM A3_NicholoBatoy</h6>
+                    <p class="text-muted small">A structured code solution emphasizing edge-case troubleshooting parameters.</p>
+                    <p class="small fw-bold mb-2">Technologies: C#</p>
+                    <button class="btn btn-primary btn-sm px-4">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="page-section">
+        <h2 class="text-center fw-bold mb-5">Contact</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-borderless contact-table w-100">
+                    <tbody>
+                        <tr><td class="fw-bold" style="width: 30%;">Email:</td><td class="text-muted">nicholox08@gmail.com</td></tr>
+                        <tr><td class="fw-bold">Mobile:</td><td class="text-muted">0970-552-2575</td></tr>
+                        <tr><td class="fw-bold">GitHub:</td><td><a href="https://github.com/Matsutake08" class="text-decoration-none">github.com/Matsutake08</a></td></tr>
+                        <tr><td class="fw-bold">LinkedIn:</td><td class="text-muted">linkedin.com</td></tr>
+                        <tr><td class="fw-bold">Facebook:</td><td><a href="https://facebook.com/nicholojohn8" class="text-decoration-none">facebook.com/nicholojohn8</a></td></tr>
+                    </tbody>
+                </table>
+                <div class="text-center mt-4">
+                    <button class="btn btn-success px-4"><i class="bi bi-download me-2"></i> Download Resume</button>
+                </div>
+                <div class="text-center mt-5 text-muted small">
+                    <p>© 2026 - IT ELECTIVE 2 Portfolio Assignment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
