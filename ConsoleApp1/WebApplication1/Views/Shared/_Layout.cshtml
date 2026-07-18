@@ -31,14 +31,18 @@
                 z-index: 1050 !important;
             }
 
-            .nav-link:hover {
-                background-color: rgba(255, 255, 255, 0.1) !important;
-                color: #0d6efd !important;
+            .nav-link {
+                cursor: pointer;
+                color: white !important;
             }
+
+                .nav-link:hover {
+                    background-color: rgba(255, 255, 255, 0.1) !important;
+                    color: #0d6efd !important;
+                }
 
             @@media (min-width: 992px) {
                 .portfolio-container {
-                    display: flex !important;
                     flex-direction: row !important;
                 }
 
@@ -68,10 +72,6 @@
 
                 .mobile-nav-header {
                     display: none !important;
-                }
-
-                .sidebar-menu-links {
-                    display: block !important;
                 }
             }
 
@@ -105,14 +105,6 @@
                     align-items: center !important;
                     width: 100% !important;
                 }
-
-                .sidebar-menu-links.collapse:not(.show) {
-                    display: none !important;
-                }
-
-                .sidebar-menu-links.collapse.show {
-                    display: block !important;
-                }
             }
     </style>
 </head>
@@ -120,41 +112,19 @@
     <div class="portfolio-container">
         <nav class="sidebar-panel">
             <h3 class="sidebar-brand">Portfolio</h3>
-
             <div class="mobile-nav-header">
                 <h4 class="m-0 text-primary fw-bold">Portfolio</h4>
                 <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
                     <i class="bi bi-list fs-4"></i>
                 </button>
             </div>
-
             <div class="collapse d-lg-block sidebar-menu-links" id="sidebarMenu">
                 <ul class="nav flex-column gap-2 mt-3 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-2 px-3 rounded d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
-                            <i class="bi bi-house me-3 fs-5"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-2 px-3 rounded d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="About">
-                            <i class="bi bi-person me-3 fs-5"></i> About Me
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-2 px-3 rounded d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Skills">
-                            <i class="bi bi-code-slash me-3 fs-5"></i> Skills
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-2 px-3 rounded d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Projects">
-                            <i class="bi bi-folder me-3 fs-5"></i> Projects
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-2 px-3 rounded d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Contact">
-                            <i class="bi bi-envelope me-3 fs-5"></i> Contact
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link py-2 px-3 rounded d-flex align-items-center" href="#home"><i class="bi bi-house me-3 fs-5"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link py-2 px-3 rounded d-flex align-items-center" href="#about"><i class="bi bi-person me-3 fs-5"></i> About Me</a></li>
+                    <li class="nav-item"><a class="nav-link py-2 px-3 rounded d-flex align-items-center" href="#skills"><i class="bi bi-code-slash me-3 fs-5"></i> Skills</a></li>
+                    <li class="nav-item"><a class="nav-link py-2 px-3 rounded d-flex align-items-center" href="#projects"><i class="bi bi-folder me-3 fs-5"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link py-2 px-3 rounded d-flex align-items-center" href="#contact"><i class="bi bi-envelope me-3 fs-5"></i> Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -167,19 +137,28 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- This script handles the "separate page" switching without needing new files -->
     <script>
-            function handleMenuResponsiveState() {
-                const menu = document.getElementById('sidebarMenu');
-                if (window.innerWidth >= 992) {
-                    menu.classList.add('show');
-                } else {
-                    menu.classList.remove('show');
-                }
-            }
-            document.addEventListener("DOMContentLoaded", handleMenuResponsiveState);
-            window.addEventListener("resize", handleMenuResponsiveState);
-    </script>
+            document.querySelectorAll('.nav-link, .nav-trigger').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    let targetId = this.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        e.preventDefault();
 
-    @await RenderSectionAsync("Scripts", required: false)
+                        // Hide all sections
+                        document.querySelectorAll('.page-section').forEach(sec => {
+                            sec.style.display = 'none';
+                        });
+
+                        // Show clicked section
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.style.display = 'block';
+                            window.scrollTo(0, 0); // Scroll to top of the new "page"
+                        }
+                    }
+                });
+            });
+    </script>
 </body>
 </html>
